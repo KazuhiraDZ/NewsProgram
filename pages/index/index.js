@@ -32,7 +32,7 @@ Page({
         this.setPageNews(result)
       },
       complete: ()=>{
-        callback && callback()
+        typeof callback === 'function' && callback()
       }
       ,fail: err => {
         console.log("Error")
@@ -50,7 +50,7 @@ Page({
         id: result[i].id,
         title: result[i].title,
         date: result[i].date.substring(11,16),
-        source: result[i].source == "" ? "互联网" : result[i].source,
+        source: !!result[i].source ? result[i].source : "互联网",
         firstImage: result[i].firstImage == "" ? "/images/first.jpg" : result[i].firstImage
       })
     }
@@ -60,8 +60,8 @@ Page({
       id: result[0].id,
       title: result[0].title,
       date: result[0].date.substring(11, 16),
-      source: result[0].source == "" ? "互联网" : result[0].source,
-      firstImage: result[0].firstImage == "" ? "/images/first.jpg" : result[0].firstImage  
+      source: !!result[0].source ? result[0].source : "互联网",
+      firstImage: !!result[0].firstImage ? result[0].firstImage : "../images/first.jpg"
     })
     this.setData({
       firstNews: firstNews,
