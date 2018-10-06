@@ -75,7 +75,7 @@ Page({
     })
   },
   onPullDownRefresh(){
-    this.getNews(() => {wx.stopPullDownRefresh()})
+    this.getNews(this.data.currCate,() => {wx.stopPullDownRefresh()})
   },
   handleCateChange(e){
     let index = e.currentTarget.dataset.index
