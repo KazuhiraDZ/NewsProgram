@@ -1,0 +1,93 @@
+.firstWrapper{
+  position: relative;
+  padding-top: 20rpx;
+  padding-bottom: 440rpx;
+}
+
+.innerWrapper{
+  align-items: center;
+  left: 40rpx;
+  right: 40rpx;
+  bottom: 30rpx;
+  position: absolute;
+}
+
+.firstInfo{
+  display: flex;
+  color: white;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.7;
+}
+
+.firstTime{
+  flex-grow: 1;
+  padding-right: 30rpx;
+  text-align: right;
+}
+
+.firstTitle{
+  display: flex;
+  color: white;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  padding-right: 100rpx;  
+}
+
+.firstImage{
+  position: absolute;
+  padding: 20rpx;
+  width: 710rpx;
+  height: 400rpx;
+  z-index: -1;
+}
+
+.outImage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  height: 450rpx;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+.newsitem{
+  display: flex;
+  margin: 0 20rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.newsitem:last-child{
+  border-bottom: none;
+}
+
+.textWrapper{
+  margin: 30rpx 20rpx 20rpx 10rpx;
+  width: 600rpx;
+}
+.itemTitle{
+  font-size: 40rpx;
+  line-height: 50rpx;
+}
+.itemInfo{
+  display: flex;
+  padding-top: 10rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.5;
+}
+.itemFrom{
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+.itemTime{
+  padding-left: 40rpx;
+  padding-right: 30rpx;
+  text-align: right;
+}
+.itemIcon{
+  padding: 30rpx 10rpx 30rpx 30rpx;
+  width: 260rpx;
+  height: 190rpx;
+}
+

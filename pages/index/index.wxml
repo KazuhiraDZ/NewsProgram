@@ -1,0 +1,27 @@
+<view class="firstWrapper" data-news="{{firstNews[0]}}" bindtap='onTapNews'>
+  <image class='firstImage' src="{{firstNews[0].firstImage}}"></image>
+  <view class="innerWrapper">
+    <view class="firstTitle">{{firstNews[0].title}}</view>
+    <view class="firstInfo">
+      <view class='firstFrom'>{{firstNews[0].source}}</view>
+      <view class='firstTime'>{{firstNews[0].date}}</view>
+    </view>
+  </view>
+  <image class='outImage' src="{{firstNews[0].firstImage}}"></image>
+</view>
+
+<scroll-view scroll-y>
+  <view class='newslist'>
+    <view class='newsitem' wx:for="{{listNews}}" data-news="{{item}}" bindtap='onTapNews'>
+      <view class='textWrapper'>
+        <view class='itemTitle'>{{item.title}}</view>
+        <view class='itemInfo'>
+          <view class='itemFrom'>{{item.source}}</view>
+          <view class='itemTime'>{{item.date}}</view>
+        </view>
+      </view>
+      <image class='itemIcon' src='{{item.firstImage}}'></image>
+
+    </view>
+  </view>
+</scroll-view>

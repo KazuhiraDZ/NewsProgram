@@ -1,0 +1,42 @@
+.titleWrapper{
+  margin: 20rpx 30rpx 0rpx 30rpx;
+  align-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.title{
+  font-size: 50rpx;
+  line-height: 65rpx;
+  margin: 20rpx 0rpx 20rpx 0rpx;
+}
+.newsInfo{
+  display: flex;
+  align-content: center;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  margin: 20rpx 0rpx 20rpx 0rpx;
+  opacity: 0.5;
+}
+.newsTime{
+  flex-grow: 1;
+  padding-left: 30rpx;
+}
+
+.article{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}
+.content_strong{
+  font-weight: bold;
+  font-size: 50rpx;
+  line-height: 65rpx;
+}
+.content_p{
+  font-size: 40rpx;
+  line-height: 56rpx;
+  text-indent: 2em;
+  opacity: 0.8;
+}
+.content_image{
+  width: 690rpx;
+}

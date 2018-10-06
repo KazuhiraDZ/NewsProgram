@@ -1,0 +1,16 @@
+<view class='titleWrapper'>
+  <view class='title'>{{title}}</view>
+  <view class='newsInfo'>
+    <view class='newsFrom'>{{source}}</view>
+    <view class='newsTime'>{{date}}</view>
+    <view class='newsRead'>阅读 {{readCount}}</view>
+  </view>
+</view>
+
+<scroll-view scroll-y>
+  <view class='article' wx:for="{{content}}">
+    <view class='content_strong' wx:if="{{item.type=='strong'}}">{{item.text}}</view>
+    <view class='content_p' wx:if="{{item.type=='p'}}">{{item.text}}</view>
+    <image class='content_image' wx:if="{{item.type=='image'}}" src='{{item.src}}' mode="widthFix"></image>
+  </view>
+</scroll-view>
