@@ -1,3 +1,9 @@
+<scroll-view scroll-x>
+  <view class="nav-list">
+    <view class="nav-item" wx:for="{{newsCategory}}" wx:key="" data-index="{{index}}" bindtap='handleCateChange'>{{item.name}}
+    </view>
+  </view>
+</scroll-view>
 <view class="firstWrapper" data-news="{{firstNews[0]}}" bindtap='onTapNews'>
   <image class='firstImage' src="{{firstNews[0].firstImage}}"></image>
   <view class="innerWrapper">

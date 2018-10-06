@@ -1,3 +1,16 @@
+.nav-list{
+  display: flex;
+}
+.nav-item{
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 10rpx 18rpx;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: center;
+  background-color: #F0F0F0;
+}
+
 .firstWrapper{
   position: relative;
   padding-top: 20rpx;

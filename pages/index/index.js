@@ -1,25 +1,41 @@
+const newsCategory = [
+  { id: 'gn', name: '国内' },
+  { id: 'gj', name: '国际' },
+  { id: 'cj', name: '财经' },
+  { id: 'yl', name: '娱乐' },
+  { id: 'js', name: '纪实' },
+  { id: 'ty', name: '体育' },
+  { id: 'other', name: '综合' }
+]
+
 Page({
   data: {
+    newsCategory,
+    currCate: 0,
     firstNews: [],
     listNews: []
   },
   onLoad(){
-    this.getNews()
+    this.getNews(0)
   },
   // 获取新闻
-  getNews(callback){
+  getNews(ID,callback){
     wx.request({
       url: 'https://test-miniprogram.com/api/news/list',
       data:{
-        type: 'gn',
+        type: newsCategory[ID].id,
       },
       success: res => {
         //console.log(res.data)
         let result = res.data.result
+        //console.log(result)
         this.setPageNews(result)
       },
       complete: ()=>{
         callback && callback()
+      }
+      ,fail: err => {
+        console.log("Error")
       }
     })
   },
@@ -35,7 +51,7 @@ Page({
         title: result[i].title,
         date: result[i].date.substring(11,16),
         source: result[i].source == "" ? "互联网" : result[i].source,
-        firstImage: result[i].firstImage
+        firstImage: result[i].firstImage == "" ? "/images/first.jpg" : result[i].firstImage
       })
     }
     let firstNews = []
@@ -45,7 +61,7 @@ Page({
       title: result[0].title,
       date: result[0].date.substring(11, 16),
       source: result[0].source == "" ? "互联网" : result[0].source,
-      firstImage: result[0].firstImage  
+      firstImage: result[0].firstImage == "" ? "/images/first.jpg" : result[0].firstImage  
     })
     this.setData({
       firstNews: firstNews,
@@ -60,5 +76,13 @@ Page({
   },
   onPullDownRefresh(){
     this.getNews(() => {wx.stopPullDownRefresh()})
+  },
+  handleCateChange(e){
+    let index = e.currentTarget.dataset.index
+    //console.log(index)
+    this.setData({
+      currCate: index,
+    })
+    this.getNews(this.data.currCate)
   }
 })

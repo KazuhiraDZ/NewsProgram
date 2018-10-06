@@ -21,7 +21,7 @@ Page({
       },
       success: res => {
         let result = res.data.result
-        console.log(result)
+        //console.log(result)
         this.setData({
           title: result.title,
           source: result.source == '' ? '互联网' : result.source,
